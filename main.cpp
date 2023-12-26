@@ -1,7 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QDebug>
 #include "src/serial.h"
+#include "src/handler.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +17,8 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
+    Handler handler;
+    engine.rootContext()->setContextProperty("handler", &handler);
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
 import "TopBar"
 import "Assests/Led"
 
@@ -37,4 +38,14 @@ Window {
             leftMargin: 530
         }
     }
+    ComboBox {
+                id: comboBox
+                width: 200
+                model: handler.portList
+                onCurrentIndexChanged: {
+                            console.log("Selected index:", comboBox.currentIndex);
+                            console.log("Selected item:", comboBox.currentText);
+                        }
+
+        }
 }
