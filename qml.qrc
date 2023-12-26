@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Assests/black.png</file>
+        <file>Assests/Led/Led.qml</file>
+        <file>TopBar/TopBar.qml</file>
+    </qresource>
+</RCC>
