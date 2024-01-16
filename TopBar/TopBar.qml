@@ -36,10 +36,12 @@ Rectangle{
             anchors{
                 verticalCenter: parent.verticalCenter
                 left: parent.left
-                leftMargin: 100
+                leftMargin: 55
             }
             text: qsTr("Settings")
             color:  "white"
+            font.pixelSize: 22
+            font.bold: true
             MouseArea{
                 id: textMouse
                 anchors.fill: parent
@@ -55,6 +57,8 @@ Rectangle{
                 left: parent.right
                 leftMargin: -100
             }
+            font.pixelSize: 22
+            font.bold: true
             MouseArea{
                 id: textMouseAbout
                 anchors.fill: parent

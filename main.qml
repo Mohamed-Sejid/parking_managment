@@ -6,7 +6,7 @@ import "Assests/Led"
 
 Window {
     width: 1024
-    height: 784
+    height: 720
     visible: true
     title: qsTr("Hello World")
     Image {
@@ -30,6 +30,7 @@ Window {
             topMargin: 200
             leftMargin: 325
         }
+        //busy: true
     }
     Led{
         id: led3
