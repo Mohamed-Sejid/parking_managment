@@ -16,6 +16,7 @@ public:
     void serialWrite(const char* msg);
     bool isOpen();
     bool isWritable();
+    void receivedSerial(QString data);
 
 
 private slots:
@@ -24,6 +25,7 @@ signals:
     void gotNewData(QString dataMsg);
 private:
     QSerialPort _link;
+    int i;
 };
 
 #endif // SERIAL_H

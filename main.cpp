@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QDebug>
+#include <QObject>
 #include "src/serial.h"
 #include "src/handler.h"
 
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     Serial* serial= new Serial();
     serial->openConnection();
-    //connect(&serial,&Serial::gotNewData,)
+
 
 
     QQmlApplicationEngine engine;

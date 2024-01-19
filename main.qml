@@ -8,7 +8,7 @@ Window {
     width: 1024
     height: 720
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Parking management")
     Image {
         id: background
         source: "qrc:/Assests/black.png"
@@ -23,6 +23,7 @@ Window {
             topMargin: 200
             leftMargin: 100
         }
+        busy: handler.led1
     }
     Led{
         id: led2
@@ -30,7 +31,7 @@ Window {
             topMargin: 200
             leftMargin: 325
         }
-        //busy: true
+        busy: handler.led2
     }
     Led{
         id: led3
@@ -38,15 +39,23 @@ Window {
             topMargin: 200
             leftMargin: 530
         }
+        busy: handler.led3
+        MouseArea{
+            anchors.fill: parent
+            onClicked: handler.setLed3(!handler.led3)
+        }
     }
     ComboBox {
                 id: comboBox
                 width: 200
                 model: handler.portList
+
                 onCurrentIndexChanged: {
                             console.log("Selected index:", comboBox.currentIndex);
                             console.log("Selected item:", comboBox.currentText);
+                            handler.setPort(comboBox.currentText);
                         }
+                //handler.setPort(comboBox.currentText);
 
         }
 }
